@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsPortal.Server", "NewsPortal.Server\NewsPortal.Server.csproj", "{A9A60265-6A25-43EF-B917-3E98DCF9EAD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsPortal.Server.Lib", "NewsPortal.Server.Lib\NewsPortal.Server.Lib.csproj", "{A5D27ED3-A50A-442A-84A2-6C6D3D70BB2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{A9A60265-6A25-43EF-B917-3E98DCF9EAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9A60265-6A25-43EF-B917-3E98DCF9EAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9A60265-6A25-43EF-B917-3E98DCF9EAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5D27ED3-A50A-442A-84A2-6C6D3D70BB2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D27ED3-A50A-442A-84A2-6C6D3D70BB2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D27ED3-A50A-442A-84A2-6C6D3D70BB2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D27ED3-A50A-442A-84A2-6C6D3D70BB2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
