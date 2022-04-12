@@ -9,4 +9,10 @@
       <PackageReference Include="MySql.Data" Version="8.0.28" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="DataBase\connection_to_db.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

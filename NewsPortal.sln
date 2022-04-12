@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsPortal.Server", "NewsPo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsPortal.Server.Lib", "NewsPortal.Server.Lib\NewsPortal.Server.Lib.csproj", "{A5D27ED3-A50A-442A-84A2-6C6D3D70BB2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsPortal.Server.Lib.Test", "NewsPortal.Server.Lib.Test\NewsPortal.Server.Lib.Test.csproj", "{110DBBEE-B044-4FD6-AE2D-3D8CEEE844DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{A5D27ED3-A50A-442A-84A2-6C6D3D70BB2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5D27ED3-A50A-442A-84A2-6C6D3D70BB2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5D27ED3-A50A-442A-84A2-6C6D3D70BB2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{110DBBEE-B044-4FD6-AE2D-3D8CEEE844DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{110DBBEE-B044-4FD6-AE2D-3D8CEEE844DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{110DBBEE-B044-4FD6-AE2D-3D8CEEE844DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{110DBBEE-B044-4FD6-AE2D-3D8CEEE844DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

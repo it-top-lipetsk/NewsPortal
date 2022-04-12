@@ -15,6 +15,8 @@ namespace NewsPortal.Server.Lib.DataBase
         {
             var conn = File.ReadAllTextAsync("connection_to_db.txt").Result;
             _connection = new MySqlConnection(conn);
+            
+            Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
         }
 
         public async Task<IEnumerable<News>> GetAllNews()
@@ -27,6 +29,18 @@ namespace NewsPortal.Server.Lib.DataBase
             await _connection.CloseAsync();
 
             return result;
+        }
+
+        public async Task<IEnumerable<User>> GetAllUsers()
+        {
+            await _connection.OpenAsync();
+
+            var sql = "SELECT id, login, password, email, first_name, last_name, middle_name FROM tab_users;";
+            var users = await _connection.QueryAsync<User>(sql);
+            
+            await _connection.CloseAsync();
+
+            return users;
         }
     }
 }
