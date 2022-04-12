@@ -404,3 +404,4 @@ FodyWeavers.xsd
 # End of https://www.toptal.com/developers/gitignore/api/csharp
 
 /NewsPortal.Server.Lib/DataBase/connection_to_db.txt
+NewsPortal.Server.Lib.Test/connection_to_db.txt
