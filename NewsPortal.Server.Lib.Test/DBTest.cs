@@ -31,6 +31,41 @@ namespace NewsPortal.Server.Lib.Test
         }
 
         [Fact]
+        public async Task GetNewsById_Test()
+        {
+            var expectedNews = new News
+            {
+                Id = 1,
+                Title = "News 1",
+                Content = "content 1",
+                DateOfCreation = new DateTime(2022, 4, 12, 18, 48, 51),
+                Author = 1
+            };
+
+            var id = 1;
+            var db = new DB();
+            var actualNews = await db.GetNewsById(id);
+            
+            Assert.Equal(expectedNews, actualNews);
+        }
+
+        [Fact]
+        public async Task InsertNews_Test()
+        {
+            var news = new News
+            {
+                Title = "News 2",
+                Content = "content 2",
+                DateOfCreation = new DateTime(2022, 4, 12, 18, 48, 51),
+                Author = 1
+            };
+            var db = new DB();
+            var actual = await db.InsertNews(news);
+            
+            Assert.True(actual);
+        }
+
+        [Fact]
         public async Task GetAllUsers_Test()
         {
             IEnumerable<User> expectedUsers = new List<User>
