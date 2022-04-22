@@ -1,7 +1,7 @@
 ﻿#nullable enable
 using NewsPortal.Server.Lib.Models;
 
-namespace NewsPortal.Server
+namespace NewsPortal.Lib
 {
     public class Request
     {
