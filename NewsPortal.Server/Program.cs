@@ -1,10 +1,13 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text.Json;
 using System.Threading.Tasks;
 using NewsPortal.Lib;
 using NewsPortal.Server.Lib.DataBase;
+using NewsPortal.Server.Lib.Models;
 
 namespace NewsPortal.Server
 {
@@ -40,9 +43,21 @@ namespace NewsPortal.Server
 
         private static async Task GetAllNews(Stream stream)
         {
+            /*
             var db = new DB();
             var news = await db.GetAllNews();
-
+            */
+            IEnumerable<News> news = new List<News>
+            {
+                new ()
+                {
+                    Id = 0, 
+                    Title = "Title 1", 
+                    Content = "Content 1", 
+                    DateOfCreation = DateTime.Now,
+                    Author = 0
+                }
+            };
             await Message.SendData(news, stream);
         }
     }
