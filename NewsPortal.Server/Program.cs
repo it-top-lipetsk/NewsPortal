@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using NewsPortal.Lib;
 using NewsPortal.Server.Lib.DataBase;
-using NewsPortal.Server.Lib.Models;
 
 namespace NewsPortal.Server
 {
@@ -15,7 +12,7 @@ namespace NewsPortal.Server
     {
         private static async Task Main()
         {
-            var server = new TcpListener(IPAddress.Loopback, 8005);
+            var server = new TcpListener(IPAddress.Loopback, 65003);
             server.Start();
 
             while (true)
@@ -23,7 +20,7 @@ namespace NewsPortal.Server
                 var client = await server.AcceptTcpClientAsync();
                 var clientStream = client.GetStream();
 
-                var requestRaw = await GetRequest(clientStream);
+                var requestRaw = await Message.GetRequest(clientStream);
                 var request = JsonSerializer.Deserialize<Request>(requestRaw);
 
                 switch (request?.Type)
@@ -46,27 +43,7 @@ namespace NewsPortal.Server
             var db = new DB();
             var news = await db.GetAllNews();
 
-            await SendData(news, stream);
-        }
-
-        private static async Task SendData(object value, Stream stream)
-        {
-            var sendRaw = JsonSerializer.Serialize(value, value.GetType());
-            var data = Encoding.Unicode.GetBytes(sendRaw);
-            await stream.WriteAsync(data.AsMemory(0, data.Length));
-        }
-        private static async Task<string> GetRequest(NetworkStream stream)
-        {
-            var builder = new StringBuilder();
-            var data = new byte[64];
-            do
-            {
-                var bytes = await stream.ReadAsync(data.AsMemory(0, data.Length));
-                builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
-            }
-            while (stream.DataAvailable);
-
-            return builder.ToString();
+            await Message.SendData(news, stream);
         }
     }
 }

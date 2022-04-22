@@ -6,7 +6,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\NewsPortal.Lib\NewsPortal.Lib.csproj" />
       <ProjectReference Include="..\NewsPortal.Server.Lib\NewsPortal.Server.Lib.csproj" />
+    
+      <None Update="connection_to_db.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
