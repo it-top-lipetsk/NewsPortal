@@ -405,3 +405,5 @@ FodyWeavers.xsd
 
 /NewsPortal.Server.Lib/DataBase/connection_to_db.txt
 NewsPortal.Server.Lib.Test/connection_to_db.txt
+
+NewsPortal.Server/connection_to_db.txt
