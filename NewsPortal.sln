@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsPortal.Server.Test_Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsPortal.Lib", "NewsPortal.Lib\NewsPortal.Lib.csproj", "{76704955-AC03-4EA3-A409-34FB975C2ED5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsPortal.Client", "NewsPortal.Client\NewsPortal.Client.csproj", "{CE786D2E-DF92-4A37-8830-DB5C12742B6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{76704955-AC03-4EA3-A409-34FB975C2ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76704955-AC03-4EA3-A409-34FB975C2ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76704955-AC03-4EA3-A409-34FB975C2ED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE786D2E-DF92-4A37-8830-DB5C12742B6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE786D2E-DF92-4A37-8830-DB5C12742B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE786D2E-DF92-4A37-8830-DB5C12742B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE786D2E-DF92-4A37-8830-DB5C12742B6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
