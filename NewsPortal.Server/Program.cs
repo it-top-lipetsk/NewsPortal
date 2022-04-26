@@ -23,21 +23,27 @@ namespace NewsPortal.Server
                 var client = await server.AcceptTcpClientAsync();
                 var clientStream = client.GetStream();
 
-                var requestRaw = await Message.GetRequest(clientStream);
-                var request = JsonSerializer.Deserialize<Request>(requestRaw);
-
-                switch (request?.Type)
+                await Task.Run(async () =>
                 {
-                    case "news_all":
-                        await GetAllNews(clientStream);
-                        break;
-                    case "users_all":
-                        break;
-                    case "news":
-                        break;
-                    case "insert_news":
-                        break;
-                }
+                    while (true)
+                    {
+                        var requestRaw = await Message.GetRequest(clientStream);
+                        var request = JsonSerializer.Deserialize<Request>(requestRaw);
+
+                        switch (request?.Type)
+                        {
+                            case "news_all":
+                                await GetAllNews(clientStream);
+                                break;
+                            case "insert_news":
+                                await InsertNews(clientStream, request);
+                                break;
+                            case "auth":
+                                await Auth(clientStream, request);
+                                break;
+                        }
+                    }
+                });
             }
         }
 
@@ -49,16 +55,48 @@ namespace NewsPortal.Server
             */
             IEnumerable<News> news = new List<News>
             {
-                new ()
+                new()
                 {
-                    Id = 0, 
-                    Title = "Title 1", 
-                    Content = "Content 1", 
+                    Id = 0,
+                    Title = "Title 1",
+                    Content = "Content 1",
                     DateOfCreation = DateTime.Now,
                     Author = 0
                 }
             };
             await Message.SendData(news, stream);
+        }
+
+        private static async Task Auth(Stream stream, Request request)
+        {
+            var defaultLogin = "user";
+            var defaultPassword = "123"; 
+            
+            if (defaultLogin == request?.Login && defaultPassword == request?.Password)
+            {
+                var user = new User
+                {
+                    Id = 0,
+                    Login = defaultLogin,
+                    Password = defaultPassword,
+                    Email = "",
+                    FirstName = "Andrey",
+                    LastName = "Starinin",
+                    MiddleName = "Nikolaevich"
+                };
+                await Message.SendData(user, stream);
+            }
+            else
+            {
+                var user = new User {Id = -1};
+                await Message.SendData(user, stream);
+            }
+        }
+
+        private static async Task InsertNews(Stream stream, Request request)
+        {
+            var db = new DB();
+            await db.InsertNews(request.News);
         }
     }
 }

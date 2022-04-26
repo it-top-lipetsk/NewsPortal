@@ -1,0 +1,29 @@
+﻿<Window x:Class="NewsPortal.Client.Windows.AddNews.AddNewsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:NewsPortal.Client.Windows.AddNews"
+        mc:Ignorable="d"
+        Title="AddNewsWindow" Height="450" Width="800">
+    <StackPanel>
+        <Label Content="Добавление новости"/>
+        
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Заголовок"/>
+            <TextBox x:Name="InputTitle"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Содержание"/>
+            <TextBox x:Name="InputContent"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="ButtonAdd"
+                    Content="Добавить"
+                    Click="ButtonAdd_OnClick"/>
+            <Button x:Name="ButtonCancel"
+                    Content="Отмена"
+                    Click="ButtonCancel_OnClick"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -8,5 +8,7 @@ namespace NewsPortal.Lib
         public string Type { get; set; }
         public int? Id { get; set; }
         public News? News { get; set; }
+        public string? Login { get; set; }
+        public string? Password { get; set; }
     }
 }
