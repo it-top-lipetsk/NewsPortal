@@ -1,0 +1,29 @@
+﻿<Window x:Class="NewsPortal.Client.Windows.Login.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:NewsPortal.Client.Windows.Login"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800">
+    <StackPanel>
+        <Label Content="Авторизация"/>
+        
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Login"/>
+            <TextBox x:Name="InputLogin"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Password"/>
+            <PasswordBox x:Name="InputPassword"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="ButtonLogin"
+                    Content="Войти"
+                    Click="ButtonLogin_OnClick"/>
+            <Button x:Name="ButtonCancel"
+                    Content="Отмена"
+                    Click="ButtonCancel_OnClick"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
